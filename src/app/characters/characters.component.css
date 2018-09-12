@@ -1,0 +1,22 @@
+.characterList{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.character{
+    flex-basis: content;
+    margin:5px;
+    border: 20px solid rgb(97, 97, 243);;
+    border-radius: 10px;
+    background: rgb(97, 97, 243);
+    color: white;
+}
+
+.character:hover{
+    background:navy;
+    border-color: navy;
+    cursor: pointer;
+}
