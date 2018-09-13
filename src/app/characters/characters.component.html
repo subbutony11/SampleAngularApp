@@ -1,5 +1,5 @@
 <div class="characterList">
-  <div class="character" *ngFor = "let character of characters">
-    <a >{{character.name}}</a>
-  </div>
+  <nav class="character" *ngFor = "let character of characters" (click) = "characterSelected(character)">
+    {{character.name}}
+  </nav>
 </div>

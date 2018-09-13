@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import * as CHARACTERS from '../../assets/characters.json';
+import {character} from '../character';
+import {CharacterService} from '../character.service';
+import { Router } from '@angular/router'
+import { SelectedCharacterData } from '../selectedCharacterData'
 
 @Component({
   selector: 'app-characters',
@@ -8,11 +12,24 @@ import * as CHARACTERS from '../../assets/characters.json';
 })
 export class CharactersComponent implements OnInit {
 
-  constructor() { }
+  constructor(private characterService: CharacterService,
+              private selectedCharacterData: SelectedCharacterData,
+              private router: Router
+              ) { }
 
-  characters = CHARACTERS.default.characters;
+  characters: character[] = CHARACTERS.default.characters;
 
   ngOnInit() {
+  }
+
+  characterSelected(selectedCharacter: character): void{
+    this.characterService.getCharacterInfo(selectedCharacter)
+      .subscribe(this.navigateToCharacter);
+  }
+
+  navigateToCharacter = (characterInfo: character):void =>{
+    this.selectedCharacterData.character = characterInfo;
+    this.router.navigateByUrl('/movies');
   }
 
 }
