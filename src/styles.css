@@ -4,11 +4,22 @@ body{
     color:gold;
 }
 
-.container{
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-    text-align: center;
+@media only screen and (max-width: 800px) {
+    .container{
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+        text-align: center;
+    }
+}
+
+@media only screen and (min-width: 801px) {
+    .container{
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        text-align: center;
+    }
 }
 
 .list{

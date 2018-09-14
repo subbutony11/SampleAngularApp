@@ -5,3 +5,7 @@
     background: black;
     color: gold;
 }
+
+article h2{
+    text-decoration: underline;
+}

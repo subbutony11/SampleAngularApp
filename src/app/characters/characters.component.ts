@@ -37,5 +37,4 @@ export class CharactersComponent implements OnInit {
     this.selectedCharacterData.character = characterInfo;
     this.router.navigateByUrl('/movies');
   }
-
 }
