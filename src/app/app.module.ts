@@ -22,4 +22,4 @@ import { SelectedCharacterData } from './selectedCharacterData';
   providers: [SelectedCharacterData],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

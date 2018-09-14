@@ -18,16 +18,22 @@ export class CharactersComponent implements OnInit {
               ) { }
 
   characters: character[] = CHARACTERS.default.characters;
+  error: boolean;
 
   ngOnInit() {
   }
 
   characterSelected(selectedCharacter: character): void{
+    this.error = false;
     this.characterService.getCharacterInfo(selectedCharacter)
       .subscribe(this.navigateToCharacter);
   }
 
   navigateToCharacter = (characterInfo: character):void =>{
+    if (!characterInfo){
+      this.error = true;
+    }
+    
     this.selectedCharacterData.character = characterInfo;
     this.router.navigateByUrl('/movies');
   }

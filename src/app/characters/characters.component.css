@@ -1,22 +1,26 @@
-.characterList{
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-}
-
 .character{
-    flex-basis: content;
     margin:5px;
-    border: 20px solid rgb(97, 97, 243);;
+    /* border: 20px solid rgb(97, 97, 243); */
+    border: 20px solid black;
     border-radius: 10px;
-    background: rgb(97, 97, 243);
-    color: white;
+    /*background: rgb(97, 97, 243);*/
+    background: black;
+    color: gold;
 }
 
 .character:hover{
-    background:navy;
-    border-color: navy;
+    background: rgb(126, 59, 59);;
+    /* background:  grey; */
+    border-color:  rgb(126, 59, 59);;
+    /* border-color: grey; */
     cursor: pointer;
+}
+
+.error{
+    background: red;
+    color: white;
+    display:inline-block;
+    border-radius: 5px;
+    margin: 40px;
+    padding: 20px;
 }

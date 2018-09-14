@@ -1,5 +1,19 @@
-<section>
+<a routerLink="/characters">< Back</a>
+
+<section class="container">
   <header>
-    <h2> {{character}}'s Film Appearances </h2>
+    <h1> {{character}}'s Film Appearances </h1>
   </header>
+
+  <div class="list">
+    <article *ngFor="let movie of movies" class="movie">
+      <header>
+        <h2>Episode {{movie.episode_id + ': ' + movie.title}}</h2>
+      </header>
+      Released: {{movie.release_date | date : 'fullDate'}}
+      <p>
+        {{movie.opening_crawl}}
+      </p>
+    </article>
+  </div>
 </section>
