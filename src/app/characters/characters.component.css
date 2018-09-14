@@ -1,20 +1,54 @@
 .character{
     margin:5px;
-    /* border: 20px solid rgb(97, 97, 243); */
     border: 20px solid black;
     border-radius: 10px;
-    /*background: rgb(97, 97, 243);*/
     background: black;
     color: gold;
+    transition: .5s;
 }
 
 .character:hover{
     background: rgb(126, 59, 59);;
-    /* background:  grey; */
     border-color:  rgb(126, 59, 59);;
-    /* border-color: grey; */
     cursor: pointer;
+    
 }
+
+.character:disabled{
+    margin:5px;
+    border: 20px solid #cccccc;
+    border-radius: 10px;
+    transition: .5s;
+    background-color: #cccccc;
+    color: #666666;
+}
+button:focus {outline:0;}
+
+
+.loader {
+    border: 5px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 5px solid gold;
+    width: 10px;
+    height: 10px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+    position: relative;
+    z-index: 10;
+    display: inline-flex;
+  }
+  
+  /* Safari */
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
 
 .error{
     background: red;
