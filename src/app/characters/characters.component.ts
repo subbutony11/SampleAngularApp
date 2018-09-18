@@ -4,6 +4,7 @@ import { character } from '../character';
 import { CharacterService } from '../character.service';
 import { Router } from '@angular/router'
 import { SelectedCharacterData } from '../selectedCharacterData'
+import { AlertService } from '../alert-service.service';
 
 @Component({
   selector: 'app-characters',
@@ -14,19 +15,18 @@ export class CharactersComponent {
 
   characters: character[] = CHARACTERS.default.characters;
   selectedIndex: number;
-  error: boolean;
   moviesPending: boolean;
 
   constructor(private characterService: CharacterService,
     private selectedCharacterData: SelectedCharacterData,
-    private router: Router
+    private router: Router,
+    private alertService: AlertService
   ) { }
 
 
   characterSelected(selectedCharacter: character, index: number): void {
     this.moviesPending = true;
     this.selectedIndex = index;
-    this.error = false;
 
     this.characterService.getCharacterInfo(selectedCharacter)
       .subscribe(this.navigateToCharacter);
@@ -34,7 +34,7 @@ export class CharactersComponent {
 
   navigateToCharacter = (characterInfo: character): void => {
     if (!characterInfo) {
-      this.error = true;
+      this.alertService.addAlert(`Sorry, we couldn't retrieve the movies for ${this.characters[this.selectedIndex].name}. Please try another.`);
       this.moviesPending = false;
       this.selectedIndex = null;
       return;

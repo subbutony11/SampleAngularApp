@@ -1,6 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
-
 body{
+    color:gold;
+}
+
+a{
     color:gold;
 }
 
@@ -8,7 +10,7 @@ body{
     .container{
         margin-left: auto;
         margin-right: auto;
-        width: 80%;
+        width: 85%;
         text-align: center;
     }
 }
@@ -37,6 +39,26 @@ body{
     -webkit-transform: rotate(135deg);
 }
 
-a{
-    color:gold;
+.flyInAlert {
+    left: 125%;
+    overflow: hidden;
+    position: fixed;
+    width: 50%;
+    opacity: 0.9;
+    z-index: 1050;
+    transition: left 0.8s ease-out 0s;
+    top: 30%;
+ }
+ 
+ .alertIn{
+     left:25%;
+ }
+
+ .error{
+    background: red;
+    color: white;
+    display:inline-block;
+    border-radius: 5px;
+    margin: 40px;
+    padding: 20px;
 }
