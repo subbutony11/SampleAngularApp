@@ -1,5 +1,7 @@
 import { Component,OnInit } from '@angular/core';
 import { AlertService } from './alert-service.service';
+import { ErrorHandlerService } from './error-handler.service'
+import { Router, RouterEvent, NavigationError } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -11,11 +13,24 @@ export class AppComponent implements OnInit{
   errorMessage: string;
   priorTimeout;
 
-  constructor(private alertService: AlertService){
+  constructor(private alertService: AlertService,
+              private router: Router,
+              private errorHandlerService: ErrorHandlerService
+              ){
   }
 
   ngOnInit(){
+    //handle errors resolving routes.
+    this.router.events.subscribe(this.handleNavigationError.bind(this));
+    
     this.alertService.getAlertListObservable().subscribe(this.handleAlert.bind(this));
+  }
+
+  handleNavigationError(event: RouterEvent){
+    if(event instanceof NavigationError)
+    {
+      this.errorHandlerService.handleError(event.error);
+    }
   }
 
   handleAlert(message){
@@ -29,6 +44,6 @@ export class AppComponent implements OnInit{
     this.priorTimeout = setTimeout(() => {
       this.showError = false;
       this.priorTimeout = null;
-    }, 6000);
+    }, 5000);
   }
 }

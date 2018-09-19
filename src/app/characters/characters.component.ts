@@ -34,13 +34,20 @@ export class CharactersComponent {
 
   navigateToCharacter = (characterInfo: character): void => {
     if (!characterInfo) {
-      this.alertService.addAlert(`Sorry, we couldn't retrieve the movies for ${this.characters[this.selectedIndex].name}. Please try another.`);
-      this.moviesPending = false;
-      this.selectedIndex = null;
+      this.HandleError();
       return;
     }
 
     this.selectedCharacterData.character = characterInfo;
-    this.router.navigateByUrl('/movies');
+    this.router.navigateByUrl('/movies')
+      .catch(()=>{
+        this.HandleError();
+      });
+  }
+
+  HandleError(){
+    this.alertService.addAlert(`Sorry, we couldn't retrieve the movies for ${this.characters[this.selectedIndex].name}. Please try another.`);
+    this.moviesPending = false;
+    this.selectedIndex = null;
   }
 }

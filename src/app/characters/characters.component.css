@@ -5,13 +5,14 @@
     background: black;
     color: gold;
     transition: .5s;
+    font-family: 'Spectral', serif;
+    font-size: medium;
 }
 
 .character:hover{
     background: rgb(126, 59, 59);;
     border-color:  rgb(126, 59, 59);;
     cursor: pointer;
-    
 }
 
 .character:disabled{

@@ -1,5 +1,7 @@
 body{
     color:gold;
+    font-family: 'Spectral', serif;
+    font-size: large;
 }
 
 a{
@@ -43,7 +45,7 @@ a{
     left: 125%;
     overflow: hidden;
     position: fixed;
-    width: 50%;
+    width: 40%;
     opacity: 0.9;
     z-index: 1050;
     transition: left 0.8s ease-out 0s;
