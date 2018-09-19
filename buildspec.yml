@@ -23,6 +23,7 @@ phases:
     post_build:
          commands:
             - aws s3 cp dist s3://${S3_BUCKET} --recursive
+            - aws s3 cp appspec.yml s3://${S3_BUCKET} 
             - echo Build completed on `date`
 artifacts:
     files:
