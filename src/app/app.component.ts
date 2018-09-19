@@ -1,4 +1,4 @@
-import { Component,OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AlertService } from './alert-service.service';
 import { ErrorHandlerService } from './error-handler.service'
 import { Router, RouterEvent, NavigationError } from '@angular/router';
