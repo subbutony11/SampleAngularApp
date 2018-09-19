@@ -3,6 +3,7 @@ environment_variables:
     plaintext:
         S3_BUCKET: "mbswappdeployartifacts"
         BUILD_ENV: "prod"
+        APP: "StarWarsApp"
 phases:
     install:
         commands:
@@ -22,7 +23,7 @@ phases:
             - ng build --${BUILD_ENV}
     post_build:
          commands:
-            - aws s3 cp dist s3://${S3_BUCKET} --recursive
+            - aws s3 cp dist s3://${S3_BUCKET}/${StarWarsApp} --recursive
             - aws s3 cp appspec.yml s3://${S3_BUCKET} 
             - echo Build completed on `date`
 artifacts:
@@ -30,4 +31,4 @@ artifacts:
         - '**/*'
         - 'dist'
     #base-directory: 'dist*'
-    discard-paths: yes
+    discard-paths: no
