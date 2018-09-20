@@ -3,12 +3,11 @@ import { ActivatedRoute } from '@angular/router';
 import { SelectedCharacterData } from '../selectedCharacterData';
 
 import { MoviesComponent } from './movies.component';
-import { Film } from '../film';
+import { Film } from '../types/film';
 
 describe('MoviesComponent', () => {
   let component: MoviesComponent;
   let fixture: ComponentFixture<MoviesComponent>;
-
 
   let movies: Film[] = [
                         {

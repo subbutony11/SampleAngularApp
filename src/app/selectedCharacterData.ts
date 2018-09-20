@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { character } from './character'
+import { character } from './types/character'
 
 @Injectable({
     providedIn: 'root'

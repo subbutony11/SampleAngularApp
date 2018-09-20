@@ -4,7 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { CharactersComponent } from './characters/characters.component';
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './routing/app-routing.module';
 import { MoviesComponent } from './movies/movies.component';
 import { SelectedCharacterData } from './selectedCharacterData';
 

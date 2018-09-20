@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import * as CHARACTERS from '../../assets/characters.json';
-import { character } from '../character';
-import { CharacterService } from '../character.service';
+import { character } from '../types/character';
+import { CharacterService } from './character.service';
 import { Router } from '@angular/router'
 import { SelectedCharacterData } from '../selectedCharacterData'
 import { AlertService } from '../alert-service.service';

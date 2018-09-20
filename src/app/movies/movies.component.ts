@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { SelectedCharacterData } from '../selectedCharacterData';
-import { Film } from '../film';
+import { Film } from '../types/film';
  
 @Component({
   selector: 'app-movies',
