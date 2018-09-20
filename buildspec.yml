@@ -18,9 +18,10 @@ phases:
         - npm install
         - npm install -g @angular/cli
     pre_build:
-        - echo Running tests
-        - ng test --watch=false
-        - echo Tests complete
+        commands:
+            - echo Running tests
+            - ng test --watch=false
+            - echo Tests complete
     build:
         commands:
             - echo Build started on `date`
