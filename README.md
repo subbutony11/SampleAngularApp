@@ -4,7 +4,7 @@ This sample Angular application displays a list of SW characters and the movies 
 
 ## Development server
 
-Run `ng serve --open` for a dev server. Your browser will open to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+After cloning the repo and running `npm install` run `ng serve --open` for a dev server. Your browser will open to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Design
 
